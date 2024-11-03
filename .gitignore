@@ -1,0 +1,8 @@
+# Secret Keys
+*.env
+
+# virtual env
+**/venv/
+
+# DB
+*.sqlite3
