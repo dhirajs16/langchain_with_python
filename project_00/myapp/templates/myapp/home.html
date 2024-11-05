@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="http://cdn.tailwindcss.com"></script>
+    <title>Recipe App</title>
+</head>
+
+<body class="bg-black text-white">
+    <h1 class="text-3xl font-bold w-screen text-center p-3 bg-red-500 rounded-b-md">Ask a Recipe - AI Master Chef</h1>
+    <div class="flex flex-col items-center justify-center mt-10">
+        <form method="post" action="{% url 'home' %}"
+            class="p-10 w-1/2 border border-red-400 flex flex-col gap-5 items-center justify-center rounded-md">
+            {% csrf_token %}
+            <input class="w-2/3 px-3 py-2 rounded-md text-black" type="text" name="recipe" id="id_recipe"
+                placeholder="Enter the recipe you're looking for">
+            <input type="submit" value="Get Recipe" class="px-3 py-2 bg-red-500 rounded-md w-1/3">
+        </form>
+        {% if recipe_result %}
+        <div class="w-4/5 mt-10 p-10 rounded-md bg-gray-800">
+            <h1 class="text-3xl font-bold text-center pb-14">Recipe</h1>
+            <pre class="whitespace-pre-wrap break-words">
+                {{ recipe_result }}
+            </pre>
+        </div>
+        {% endif %}
+    </div>
+</body>
+
+</html>
