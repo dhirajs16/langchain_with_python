@@ -1,19 +1,25 @@
-import os
-from decouple import config
-os.environ["GROQ_API_KEY"] = config('GROQ_API_KEY')
-
 from langchain_groq import ChatGroq
-from langchain_community.document_loaders import WebBaseLoader
+from decouple import config
 
-# llm = ChatGroq(model="llama3-8b-8192")
+groq_api_key = config('GROQ_API_KEY')
+llm = ChatGroq(groq_api_key=groq_api_key, model='llama3-8b-8192')
 
+messages = [
+    ('system', """
+     You are a simple recipe generator. If queries other than recipe generation and food
+     are asked then just kindly reply "I'm a simple recipe generator. I can't help you with this."
+     """),
+]
 
+def chat_bot(query):
+    messages.append(('human', query))
+    response = llm.invoke(messages)
+    print('AI:', response.content)
+    messages.append(('ai', response.content))
 
-# 1. Webbase loader
-
-# loader = WebBaseLoader("https://www.espn.com/")
-# docs = loader.load()
-# print(docs[0].page_content)
-
-
-
+while True:
+    query = input('You: ')
+    if query.lower() in ('q', 'quit'):
+        break
+    
+    chat_bot(query)
