@@ -6,3 +6,7 @@
 
 # DB
 *.sqlite3
+
+# rag external data source files
+*sample.pdf
+*sample.txt
