@@ -213,3 +213,45 @@ print(result)
 pip install langchain_community pypdf
 
 ```
+<hr>
+
+### **LangGraph**
+
+**LangGraph** is a library for building stateful, multi-actor applications with LLMs, used to create agent and multi-agent workflows. 
+- **Stateful System**: LangGraph operates like this assistant with a notebook. It remembers past interactions, tasks, and data (the "state") to provide a seamless, continuous experience. Whether it's handling a long-running process or remembering user preferences, it keeps everything organized and accessible across different sessions.
+
+- **Agents**: Agents are like smart assistant that uses LLM models and models and other tools to make decisions and perform tasks. Unlike regular chatbots and other LLM application it doesn't directly generate text, but involves decision making as well. 
+
+
+
+### **LangGraph Agent Simplified**
+Creating a LangGraph agent involves defining various tools and actors. Here's a step-by-step analogy to make it clearer:
+
+1. **Tools**: Think of tools as specialized instruments or functions. For example, one tool might handle calculations, another might perform searches, and another could manage data storage.
+2. **Actors**: These are like the workers who use the tools. Each actor has a specific role, such as calculating results, searching for information, or interacting with the user.
+3. **LLM Model**: The large language model (like GPT-4) acts as the smart supervisor. It knows which tool to use for each task based on the instructions and context.
+4. **Decision Making**: When you give a task to the LangGraph agent, the LLM model decides which tool (or tools) to use to get the job done. It orchestrates the process, ensuring everything runs smoothly and efficiently.
+
+### Example
+Imagine you're running a restaurant:
+- **Tools**: These are the kitchen appliances like the oven, mixer, and fridge.
+- **Actors**: These are the chefs, waiters, and cleaners, each with their specific roles.
+- **LLM Model (Supervisor)**: The manager decides what needs to be done—when to use the oven, who should prepare the dish, and when it should be served.
+- **Decision Making**: Based on the order from a customer, the manager (LLM model) chooses the appropriate tools and actors to prepare and serve the meal.
+
+### LangGraph in Action
+So, a LangGraph agent works similarly. It utilizes various tools and actors, with the help of an LLM model, to decide which tool to pick for each task, ensuring the entire workflow is efficient and effective.
+
+Does this analogy help clarify the concept for you? Let me know if you have any further questions!
+
+
+
+
+
+
+
+
+
+
+
+
